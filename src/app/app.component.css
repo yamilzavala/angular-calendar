@@ -1,0 +1,25 @@
+ol {
+    list-style: none; 
+    display: grid;
+    grid-template-columns: repeat(7, 1fr) ;
+    padding: 0;
+}
+
+li { 
+    text-align: right;
+}
+
+div {
+    align-items: center;
+    width: 300px;
+}
+
+.first-day {
+    grid-column-start: 5;
+}
+
+.day-name {
+    background-color: rgb(223, 223, 223);
+    font-weight: bold;
+    text-align: center;
+}
