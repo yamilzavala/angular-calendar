@@ -7,11 +7,25 @@ ol {
 
 li { 
     text-align: right;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: rgb(214, 213, 218);
+}
+
+h4 { 
+    font-weight: bold;
+    font-family: monospace;
+    text-align: left;
+    margin-left: 2%;
+    font-size: 1.2em;
 }
 
 div {
     align-items: center;
     width: 300px;
+    font-family: monospace;
 }
 
 .first-day {
@@ -22,4 +36,21 @@ div {
     background-color: rgb(223, 223, 223);
     font-weight: bold;
     text-align: center;
+}
+
+button { 
+    width: 100px;
+    min-height: 40px;
+    margin: 1%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+}
+
+.time-zone-section { 
+    width: 400px;
+    margin-top:5%;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

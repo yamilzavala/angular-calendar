@@ -1,56 +1,22 @@
 <h4>{{dateSelect | date: 'MMM YYYY' }}</h4>
 <button (click)="changeMonth(-1)">Prev month</button>
 <button (click)="changeMonth(1)">Next month</button>
+
 <div>
   <ol>
     <li *ngFor="let day of weekdays" class="day-name">{{day}}</li>
-
     <li 
-    (click)="getSelectedDay(day)"
+    (click)="getSelectedDay(day)"    
     [style.gridColumnStart] = "first ? day?.indexWeek : 'auto'"
-    *ngFor="let day of monthSelect; let first = first">{{day.value}}</li>
-
-    <!-- <li class="first-day">1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-    <li>8</li>
-    <li>9</li>
-    <li>10</li>
-    <li>11</li>
-    <li>12</li>
-    <li>13</li>
-    <li>14</li>
-    <li>15</li>
-    <li>16</li>
-    <li>17</li>
-    <li>18</li>
-    <li>19</li>
-    <li>20</li>
-    <li>21</li>
-    <li>22</li>
-    <li>23</li>
-    <li>24</li>
-    <li>25</li>
-    <li>26</li>
-    <li>27</li>
-    <li>28</li>
-    <li>29</li>
-    <li>30</li>
-    <li>31</li> -->
-
-    
+    *ngFor="let day of monthSelect; let first = first">{{day.value}}</li>    
   </ol>
+  <h4 *ngIf='currentDaySelected'>Selected date: {{currentDaySelected}}</h4>
 </div>
 
-<h4 *ngIf='currentDaySelected'>Selected date: {{currentDaySelected}}</h4>
 
-<button (click)="getTimeZone('America/Bogota')">Show Colombia timeZone</button>
-<button (click)="getTimeZone('Europe/Madrid')">Show Madrid timeZone</button>
-<button (click)="getTimeZone('America/Argentina/Buenos_Aires')">Show Buenos Aires timeZone</button>
-<h4 *ngIf='currentTimeZoneSelected'>{{currentTimeZoneSelected}}</h4>
-
-<!-- <button (click)="getDateFromDate()">Show data in console</button> -->
+<div class='time-zone-section '>
+  <button (click)="getTimeZone('America/Bogota')">Colombia timeZone</button>
+  <button (click)="getTimeZone('Europe/Madrid')">Spain timeZone</button>
+  <button (click)="getTimeZone('America/Argentina/Buenos_Aires')">Argentina timeZone</button>
+  <h4 *ngIf='currentTimeZoneSelected'>{{currentTimeZoneSelected}}</h4>
+</div>
