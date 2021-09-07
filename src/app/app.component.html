@@ -48,4 +48,9 @@
 
 <h4 *ngIf='currentDaySelected'>Selected date: {{currentDaySelected}}</h4>
 
+<button (click)="getTimeZone('America/Bogota')">Show Colombia timeZone</button>
+<button (click)="getTimeZone('Europe/Madrid')">Show Madrid timeZone</button>
+<button (click)="getTimeZone('America/Argentina/Buenos_Aires')">Show Buenos Aires timeZone</button>
+<h4 *ngIf='currentTimeZoneSelected'>{{currentTimeZoneSelected}}</h4>
+
 <!-- <button (click)="getDateFromDate()">Show data in console</button> -->

@@ -10,7 +10,7 @@ import {
 } from 'date-fns';
 
 // declare function parseDate(date: any, timeZone: any): void;
-// import {parseDate} from '../utils/parseDate';
+const {parseDate} = require('../utils/internationalization.js');
 
 @Component({
   selector: 'app-root',
@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   monthSelect: any[] = [];
   dateSelect: any;
   currentDaySelected: string = '';
+  currentTimeZoneSelected: string = '';
 
   ngOnInit() {
     this.getDateFromDate();
@@ -63,8 +64,14 @@ export class AppComponent implements OnInit {
   }
 
   getSelectedDay(day: any) {
-    this.currentDaySelected = format(this.dateSelect, 'yyyy-MM').concat('-',day.value);      
+    this.currentDaySelected = format(this.dateSelect, 'yyyy-MM').concat('-',day.value);         
   }
+
+  getTimeZone(timeZone: string) {
+    this.currentTimeZoneSelected = timeZone.concat(': ',parseDate(new Date(), timeZone));
+  }
+
+
 }
 
 export interface FormatDateI {
