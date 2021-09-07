@@ -5,7 +5,9 @@
   <ol>
     <li *ngFor="let day of weekdays" class="day-name">{{day}}</li>
 
-    <li [style.gridColumnStart] = "first ? day?.indexWeek : 'auto'"
+    <li 
+    (click)="getSelectedDay(day)"
+    [style.gridColumnStart] = "first ? day?.indexWeek : 'auto'"
     *ngFor="let day of monthSelect; let first = first">{{day.value}}</li>
 
     <!-- <li class="first-day">1</li>
@@ -43,5 +45,7 @@
     
   </ol>
 </div>
+
+<h4 *ngIf='currentDaySelected'>Selected date: {{currentDaySelected}}</h4>
 
 <!-- <button (click)="getDateFromDate()">Show data in console</button> -->

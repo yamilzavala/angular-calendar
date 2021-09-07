@@ -9,6 +9,9 @@ import {
   addMonths,
 } from 'date-fns';
 
+// declare function parseDate(date: any, timeZone: any): void;
+// import {parseDate} from '../utils/parseDate';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,6 +24,7 @@ export class AppComponent implements OnInit {
   //monthSelect: FormatDateI = {name: '', value: 0, indexWeek: 0};
   monthSelect: any[] = [];
   dateSelect: any;
+  currentDaySelected: string = '';
 
   ngOnInit() {
     this.getDateFromDate();
@@ -56,6 +60,10 @@ export class AppComponent implements OnInit {
       const nextDate = addMonths(this.dateSelect, direction);
       this.getDateFromDate(+format(nextDate, 'yyyy'), +format (nextDate, 'MM'), +format (nextDate, 'dd'));
     }
+  }
+
+  getSelectedDay(day: any) {
+    this.currentDaySelected = format(this.dateSelect, 'yyyy-MM').concat('-',day.value);      
   }
 }
 
